@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Html  Form </title>
+    <style>
+        body{margin: 0px;padding: 0px;
+            background-image: linear-gradient(rgb(3, 3, 63),rgb(6, 6, 141),rgb(9, 9, 194),blue);
+            background-repeat: no-repeat;background-size: cover;height: 100vh;
+        }
+        #maincontainer{margin: 0px;padding: 0px;}
+        #formcontainer{margin-top: auto;margin-bottom: auto;margin-right: auto;margin-left: auto;border-width: 0.5px;border-style: solid;width: 40%;
+            margin-top: 5%}
+        #option1{border-style: solid;border-width: 1%;width: 50%;max-width: 50%;float: left;font-size: 1.5vw;margin-left: 0px;}
+        #option1:hover{background-color: rgb(185, 183, 183);}
+        #option2{border-style: solid;border-width: 1%;width: 50%;max-width: 49.9;font-size: 1.5vw;margin-left: 0px;}
+        #option2:hover{background-color: rgb(185, 183, 183);}
+        #optioncontainner{display: inline-block;}
+        .inputlabel{font-size: 1.8vw;margin-left: 2%;}
+        .inputtake{margin-top: 5%;width: 50%;height: 5vh;font-size: 1.5vw;background-color: transparent;outline: none;border-style: none;border-bottom: solid;
+            border-width: 1px;}
+        video {pointer-events: none;}
+        button{background-color: rgb(104, 6, 189);border-color: rgb(104, 6, 189);}
+
+    </style>
+</head>
+<body> 
+    <div id="maincontainer">
+        <p style="text-align: center;font-size: 2vw;margin-top: 5%;margin-bottom: 0px;color: red;">If already signup please login </p>
+        <div id="formcontainer">
+            <div id="optioncontainer">
+                <button onclick="document.getElementById('signupform').style.display = 'block';document.getElementById('logform').style.display = 'none'"  id="option1">Signup</button> 
+                <button onclick="document.getElementById('logform').style.display = 'block';document.getElementById('signupform').style.display = 'none'"  id="option2">Login</button>
+            </div>
+            <form action="/user/signup" style="margin-bottom: 5%;display: none;" id="signupform" method="post">
+                <label  class="inputlabel" for="name">Name:</label>
+                <input name="name" style="margin-left: 7%;" class="inputtake" type="text" id="name" ><br>
+                <label class="inputlabel " for="number">Number:</label>
+                <input name="number" style="margin-left: 3%;" class="inputtake" type="text"  id="number" ><br>
+                <label class="inputlabel" for="email">Email:</label>
+                <input name="email" style="margin-left: 7%;" class="inputtake" type="email" id="email" ><br>
+                <label class="inputlabel" for="pass">Password:</label>
+                <input name="password" style="margin-left: 1%;" class="inputtake" type="text" id="pass"><br>
+
+            
+            <input style="margin-left: 5%;margin-top: 5%;" id="remberme" type="checkbox">
+            <label style="font-size: 1vw;margin-right: 55%;margin-top: 10%;" for="remberme">Remberme</label>
+            <span><a style="font-size: 1.3vw;margin-top: 10%;" href="">Forgot Password</a></span><br>
+            <button style="margin-left: 35%;margin-right: auto;text-align: center;width: 30%;height: 1.5vw;margin-top: 3%;font-size: 1vw;" type="submit">Submit</button>
+            </form>
+            <form action="/user/login" method="post" style="margin-top: 4%;margin-bottom: 4%;display: none;" id="logform">
+                <label style="font-size: 1.8vw;margin-left: 2%;" for="lognum">Number:</label>
+                <input name="email" style="font-size: 1.5vw;margin-left: 7%;margin-top: 2%;" type="email" id="lognum" ><br>
+                <label style="font-size: 1.8vw; margin-left: 2%;" for="logpass">Password:</label>
+                <input name="password" style="font-size: 1.5vw;margin-left: 5%;margin-top: 3%;" type="text" id="logpass"><br>
+
+                <input style="margin-left: 5%;margin-top: 5%;" id="remberme" type="checkbox">
+                <label style="font-size: 1vw;margin-right: 55%;margin-top: 10%;" for="remberme">Remberme</label>
+                <span><a style="font-size: 1.3vw;margin-top: 10%;" href="">Forgot Password</a></span><br>
+                <button formaction="/user/login" style="margin-left: 35%;margin-right: auto;text-align: center;width: 30%;height: 1.5vw;margin-top: 3%;font-size: 1vw;" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function formview(){
+            document.getElementById('signupform').style.display = 'block';
+        }
+        window.onload =formview()
+    </script>
+</body>
+</html>
